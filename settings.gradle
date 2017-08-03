@@ -1,0 +1,2 @@
+include ':release-management-core'
+include ':release-management-ws'

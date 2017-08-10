@@ -1,13 +1,17 @@
 package ec.com.kruger.releasemanagement.dto;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Table(name="CATALOGTYPE")
+@Table(name="CatalogType")
 @Entity
 public class CatalogType {
 	
@@ -19,6 +23,10 @@ public class CatalogType {
 	private String code;
 	@Column(name="DESCRIPTION")
 	private String description;
+	@OneToMany(mappedBy="type")
+	private List<Catalog> catalogs;
+	@OneToMany(mappedBy="type")
+	private List<Catalog> catalogs1;
 	
 	public Integer getId() {
 		return id;
@@ -37,6 +45,12 @@ public class CatalogType {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public List<Catalog> getCatalogs() {
+		return catalogs;
+	}
+	public void setCatalogs(List<Catalog> catalogs) {
+		this.catalogs = catalogs;
 	}
 	
 

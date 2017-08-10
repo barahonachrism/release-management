@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ec.com.kruger.releasemanagement.test.CatalogTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2017-08-10T16:41:53" hostname="pc-smxk123.kruger.com.ec" time="0.274">
+  <properties/>
+  <testcase name="testFindAllCatalogsByType" classname="ec.com.kruger.releasemanagement.test.CatalogTest" time="0.147"/>
+  <testcase name="testCreateCatalog" classname="ec.com.kruger.releasemanagement.test.CatalogTest" time="0.089"/>
+  <testcase name="testFindAllCatalogs" classname="ec.com.kruger.releasemanagement.test.CatalogTest" time="0.008"/>
+  <testcase name="testCreateCatalogType" classname="ec.com.kruger.releasemanagement.test.CatalogTest" time="0.027"/>
+  <system-out><![CDATA[Hibernate: select this_.ID as ID1_0_0_, this_.CODE as CODE2_0_0_, this_.DESCRIPTION as DESCRIPT3_0_0_, this_.TYPEID as TYPEID4_0_0_ from Catalog this_ where this_.TYPEID=?
+Produccion
+Desarrollo
+Control de calidad
+Hibernate: insert into Catalog (CODE, DESCRIPTION, TYPEID) values (?, ?, ?)
+Hibernate: select this_.ID as ID1_0_0_, this_.CODE as CODE2_0_0_, this_.DESCRIPTION as DESCRIPT3_0_0_, this_.TYPEID as TYPEID4_0_0_ from Catalog this_
+Hibernate: insert into CatalogType (CODE, DESCRIPTION) values (?, ?)
+]]></system-out>
+  <system-err><![CDATA[ago 10, 2017 11:41:51 AM org.springframework.test.context.support.DefaultTestContextBootstrapper getDefaultTestExecutionListenerClassNames
+INFORMACIÓN: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+ago 10, 2017 11:41:51 AM org.springframework.test.context.support.DefaultTestContextBootstrapper instantiateListeners
+INFORMACIÓN: Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+ago 10, 2017 11:41:51 AM org.springframework.test.context.support.DefaultTestContextBootstrapper getTestExecutionListeners
+INFORMACIÓN: Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@72e1e4b9, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7a66aa10, org.springframework.test.context.support.DirtiesContextTestExecutionListener@166eaa4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@15d2f773, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@686b1d5c]
+ago 10, 2017 11:41:51 AM org.springframework.context.support.GenericApplicationContext prepareRefresh
+INFORMACIÓN: Refreshing org.springframework.context.support.GenericApplicationContext@4a31026c: startup date [Thu Aug 10 11:41:51 ECT 2017]; root of context hierarchy
+ago 10, 2017 11:41:51 AM org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions
+INFORMACIÓN: Loading XML bean definitions from class path resource [transactionBeans.xml]
+ago 10, 2017 11:41:52 AM org.springframework.jdbc.datasource.DriverManagerDataSource setDriverClassName
+INFORMACIÓN: Loaded JDBC driver: com.mysql.jdbc.Driver
+ago 10, 2017 11:41:52 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+INFO: HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+ago 10, 2017 11:41:52 AM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {4.3.11.Final}
+ago 10, 2017 11:41:52 AM org.hibernate.cfg.Environment <clinit>
+INFO: HHH000206: hibernate.properties not found
+ago 10, 2017 11:41:52 AM org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+ago 10, 2017 11:41:52 AM org.hibernate.dialect.Dialect <init>
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+ago 10, 2017 11:41:53 AM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+INFO: HHH000399: Using default transaction strategy (direct JDBC transactions)
+ago 10, 2017 11:41:53 AM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+ago 10, 2017 11:41:53 AM org.springframework.orm.hibernate4.HibernateTransactionManager afterPropertiesSet
+INFORMACIÓN: Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@22a71e46] of Hibernate SessionFactory for HibernateTransactionManager
+]]></system-err>
+</testsuite>

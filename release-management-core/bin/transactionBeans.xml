@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+	<!-- Procedimiento para el tratamiento de transacciones del proyecto -->
+	<tx:advice id="txAdvice" transaction-manager="hibernateTransactionManager">
+		<tx:attributes>
+			<!-- Las busquedas hacen acceso a la base con transacciones en modo lectura -->
+			<tx:method name="trans*" rollback-for="Throwable"/>
+			<!-- Todos los demas metodos son transaccionales en modo lectura/escritura -->
+			<tx:method name="*" read-only="true"  rollback-for="Throwable"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	
+	<aop:config>
+		<!-- Se intercepta todos los metodos de la capa de servicio -->
+		<aop:pointcut id="pointcutServiceMethods" expression="within(ec.com.kruger.releasemanagement.service.*)"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcutServiceMethods"/>
+	</aop:config>
+
+</beans>

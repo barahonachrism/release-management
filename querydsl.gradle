@@ -1,0 +1,14 @@
+
+sourceSets {
+    main {
+        java {
+            srcDir "$buildDir/generated/source/apt/main"
+        }
+    }
+}
+
+querydsl {
+    // we use mongodb
+    jpa = true
+    querydslSourcesDir = "$buildDir/generated/source/apt/main"
+}
